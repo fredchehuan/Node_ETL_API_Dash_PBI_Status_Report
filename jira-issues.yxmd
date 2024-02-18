@@ -1,0 +1,1507 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="846" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Password />
+          <URLField>url</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="False" />
+          <Headers>
+            <NameValues>
+              <Item name="content-type" value="application/json" />
+              <Item name="Authorization" value="Basic cmljYXJkby5zZXB1bHZlZGFAbWp2LmNvbS5icjphSUFUSm11THlJMUg0UWVGWGNpOTQwMzQ" />
+            </NameValues>
+            <Fields orderChanged="False">
+              <Field name="url" selected="False" />
+              <Field name="content-type" selected="False" />
+              <Field name="Authorization" selected="False" />
+              <Field name="projectKey" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="url" selected="False" />
+              <Field name="content-type" selected="False" />
+              <Field name="Authorization" selected="False" />
+              <Field name="projectKey" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <UserName />
+          <numConnections>5</numConnections>
+          <Timeout>60</Timeout>
+          <EnableRPM value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="url" />
+            <Field name="content-type" />
+            <Field name="Authorization" />
+            <Field name="output path" />
+          </Fields>
+          <Data>
+            <r>
+              <c>https://mjv-corp.atlassian.net/rest/api/3/search?jql=project%20%3D%20{projectKey}&amp;startAt=0</c>
+              <c>application/json; charset=utf-8</c>
+              <c>Basic cmljYXJkby5zZXB1bHZlZGFAbWp2LmNvbS5icjphSUFUSm11THlJMUg0UWVGWGNpOTQwMzQ</c>
+              <c>C:\Users\frederick.barros\Documents\DASH MJV\Dev\status-report\alteryx\download</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="954" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="DownloadData" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="1074" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings>
+        <Position x="1194" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"JSON_Name"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">True</Value>
+          <Value name="Check Box (70)">True</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1326" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1458" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="RecordID" />
+          </GroupFields>
+          <HeaderField field="JSON_Name" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="CrossTab:Group:Concat:" type="Int32" />
+            <Field name="errorMessages" size="2048" source="CrossTab:Header:JSON_Name:errorMessages:Concat:" type="V_WString" />
+            <Field name="expand" size="2048" source="CrossTab:Header:JSON_Name:expand:Concat:" type="V_WString" />
+            <Field name="issuesexpand" size="2048" source="CrossTab:Header:JSON_Name:issuesexpand:Concat:" type="V_WString" />
+            <Field name="issuesfieldsaggregateprogresspercent" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsaggregateprogresspercent:Concat:" type="V_WString" />
+            <Field name="issuesfieldsaggregateprogressprogress" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsaggregateprogressprogress:Concat:" type="V_WString" />
+            <Field name="issuesfieldsaggregateprogresstotal" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsaggregateprogresstotal:Concat:" type="V_WString" />
+            <Field name="issuesfieldsaggregatetimeestimate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsaggregatetimeestimate:Concat:" type="V_WString" />
+            <Field name="issuesfieldsaggregatetimeoriginalestimate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsaggregatetimeoriginalestimate:Concat:" type="V_WString" />
+            <Field name="issuesfieldsaggregatetimespent" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsaggregatetimespent:Concat:" type="V_WString" />
+            <Field name="issuesfieldsassignee" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsassignee:Concat:" type="V_WString" />
+            <Field name="issuesfieldsassigneeaccountId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsassigneeaccountId:Concat:" type="V_WString" />
+            <Field name="issuesfieldsassigneeaccountType" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsassigneeaccountType:Concat:" type="V_WString" />
+            <Field name="issuesfieldsassigneeactive" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsassigneeactive:Concat:" type="V_WString" />
+            <Field name="issuesfieldsassigneeavatarUrlsx" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsassigneeavatarUrlsx:Concat:" type="V_WString" />
+            <Field name="issuesfieldsassigneedisplayName" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsassigneedisplayName:Concat:" type="V_WString" />
+            <Field name="issuesfieldsassigneeemailAddress" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsassigneeemailAddress:Concat:" type="V_WString" />
+            <Field name="issuesfieldsassigneeself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsassigneeself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsassigneetimeZone" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsassigneetimeZone:Concat:" type="V_WString" />
+            <Field name="issuesfieldscomponentsid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscomponentsid:Concat:" type="V_WString" />
+            <Field name="issuesfieldscomponentsname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscomponentsname:Concat:" type="V_WString" />
+            <Field name="issuesfieldscomponentsself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscomponentsself:Concat:" type="V_WString" />
+            <Field name="issuesfieldscreated" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscreated:Concat:" type="V_WString" />
+            <Field name="issuesfieldscreatoraccountId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscreatoraccountId:Concat:" type="V_WString" />
+            <Field name="issuesfieldscreatoraccountType" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscreatoraccountType:Concat:" type="V_WString" />
+            <Field name="issuesfieldscreatoractive" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscreatoractive:Concat:" type="V_WString" />
+            <Field name="issuesfieldscreatoravatarUrlsx" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscreatoravatarUrlsx:Concat:" type="V_WString" />
+            <Field name="issuesfieldscreatordisplayName" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscreatordisplayName:Concat:" type="V_WString" />
+            <Field name="issuesfieldscreatoremailAddress" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscreatoremailAddress:Concat:" type="V_WString" />
+            <Field name="issuesfieldscreatorself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscreatorself:Concat:" type="V_WString" />
+            <Field name="issuesfieldscreatortimeZone" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscreatortimeZone:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfield" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfield:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldboardId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldboardId:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldcompleteDate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldcompleteDate:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfielddisplayName" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfielddisplayName:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldendDate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldendDate:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldgoal" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldgoal:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldhasEpicLinkFieldDependency" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldhasEpicLinkFieldDependency:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldid:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldlanguageCode" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldlanguageCode:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldlinksself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldlinksself:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldname:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldnonEditableReasonmessage" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldnonEditableReasonmessage:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldnonEditableReasonreason" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldnonEditableReasonreason:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldself:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldshowField" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldshowField:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldstartDate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldstartDate:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldstate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldstate:Concat:" type="V_WString" />
+            <Field name="issuesfieldscustomfieldvalue" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldscustomfieldvalue:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentattrsisNumberColumnEnabled" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentattrsisNumberColumnEnabled:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentattrslayout" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentattrslayout:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentattrslevel" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentattrslevel:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentattrspanelType" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentattrspanelType:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentattrswidth" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentattrswidth:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentattrsaccessLevel" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentattrsaccessLevel:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentattrscollection" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentattrscollection:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentattrsheight" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentattrsheight:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentattrsid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentattrsid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentattrsoccurrenceKey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentattrsoccurrenceKey:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentattrstext" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentattrstext:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentattrstype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentattrstype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentattrsurl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentattrsurl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentattrswidth" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentattrswidth:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentattrscolspan" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentattrscolspan:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentattrslayout" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentattrslayout:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentattrscollection" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentattrscollection:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentattrsheight" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentattrsheight:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentattrsid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentattrsid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentattrsoccurrenceKey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentattrsoccurrenceKey:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentattrstype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentattrstype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentattrswidth" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentattrswidth:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentcontentcontentcontentcontentmarkstype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentcontentcontentcontentcontentmarkstype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentcontentcontentcontentcontenttext" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentcontentcontentcontentcontenttext:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentcontentcontentcontentcontenttype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentcontentcontentcontentcontenttype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentcontentcontentcontenttype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentcontentcontentcontenttype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentcontentcontentmarkstype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentcontentcontentmarkstype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentcontentcontenttext" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentcontentcontenttext:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentcontentcontenttype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentcontentcontenttype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentcontentmarkstype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentcontentmarkstype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentcontenttext" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentcontenttext:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentcontenttype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentcontenttype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentmarksattrshref" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentmarksattrshref:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontentmarkstype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontentmarkstype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontenttext" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontenttext:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentcontenttype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentcontenttype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentmarksattrshref" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentmarksattrshref:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontentmarkstype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontentmarkstype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontenttext" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontenttext:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentcontenttype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentcontenttype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentmarksattrscolor" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentmarksattrscolor:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentmarksattrshref" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentmarksattrshref:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontentmarkstype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontentmarkstype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontenttext" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontenttext:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontentcontenttype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontentcontenttype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptioncontenttype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptioncontenttype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptiontype" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptiontype:Concat:" type="V_WString" />
+            <Field name="issuesfieldsdescriptionversion" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsdescriptionversion:Concat:" type="V_WString" />
+            <Field name="issuesfieldsduedate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsduedate:Concat:" type="V_WString" />
+            <Field name="issuesfieldsenvironment" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsenvironment:Concat:" type="V_WString" />
+            <Field name="issuesfieldsfixVersionsarchived" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsfixVersionsarchived:Concat:" type="V_WString" />
+            <Field name="issuesfieldsfixVersionsdescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsfixVersionsdescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsfixVersionsid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsfixVersionsid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsfixVersionsname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsfixVersionsname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsfixVersionsreleased" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsfixVersionsreleased:Concat:" type="V_WString" />
+            <Field name="issuesfieldsfixVersionsreleaseDate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsfixVersionsreleaseDate:Concat:" type="V_WString" />
+            <Field name="issuesfieldsfixVersionsself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsfixVersionsself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsissuetypeavatarId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsissuetypeavatarId:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsissuetypedescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsissuetypedescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsissuetypeentityId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsissuetypeentityId:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsissuetypehierarchyLevel" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsissuetypehierarchyLevel:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsissuetypeiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsissuetypeiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsissuetypeid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsissuetypeid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsissuetypename" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsissuetypename:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsissuetypeself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsissuetypeself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsissuetypesubtask" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsissuetypesubtask:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldspriorityiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldspriorityiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldspriorityid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldspriorityid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldspriorityname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldspriorityname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldspriorityself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldspriorityself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsstatusdescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsstatusdescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsstatusiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsstatusiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsstatusid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsstatusid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsstatusname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsstatusname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsstatusself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsstatusself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsstatusstatusCategorycolorName" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsstatusstatusCategorycolorName:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsstatusstatusCategoryid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsstatusstatusCategoryid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsstatusstatusCategorykey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsstatusstatusCategorykey:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsstatusstatusCategoryname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsstatusstatusCategoryname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldsstatusstatusCategoryself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldsstatusstatusCategoryself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuefieldssummary" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuefieldssummary:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssueid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssueid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssuekey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssuekey:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksinwardIssueself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksinwardIssueself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsissuetypeavatarId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsissuetypeavatarId:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsissuetypedescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsissuetypedescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsissuetypeentityId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsissuetypeentityId:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsissuetypehierarchyLevel" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsissuetypehierarchyLevel:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsissuetypeiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsissuetypeiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsissuetypeid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsissuetypeid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsissuetypename" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsissuetypename:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsissuetypeself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsissuetypeself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsissuetypesubtask" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsissuetypesubtask:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldspriorityiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldspriorityiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldspriorityid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldspriorityid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldspriorityname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldspriorityname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldspriorityself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldspriorityself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsstatusdescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsstatusdescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsstatusiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsstatusiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsstatusid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsstatusid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsstatusname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsstatusname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsstatusself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsstatusself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsstatusstatusCategorycolorName" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsstatusstatusCategorycolorName:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsstatusstatusCategoryid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsstatusstatusCategoryid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsstatusstatusCategorykey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsstatusstatusCategorykey:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsstatusstatusCategoryname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsstatusstatusCategoryname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldsstatusstatusCategoryself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldsstatusstatusCategoryself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuefieldssummary" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuefieldssummary:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssueid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssueid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssuekey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssuekey:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksoutwardIssueself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksoutwardIssueself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinksself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinksself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinkstypeid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinkstypeid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinkstypeinward" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinkstypeinward:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinkstypename" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinkstypename:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinkstypeoutward" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinkstypeoutward:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuelinkstypeself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuelinkstypeself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuetypeavatarId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuetypeavatarId:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuetypedescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuetypedescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuetypeentityId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuetypeentityId:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuetypehierarchyLevel" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuetypehierarchyLevel:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuetypeiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuetypeiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuetypeid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuetypeid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuetypename" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuetypename:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuetypeself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuetypeself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsissuetypesubtask" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsissuetypesubtask:Concat:" type="V_WString" />
+            <Field name="issuesfieldslabels" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldslabels:Concat:" type="V_WString" />
+            <Field name="issuesfieldslastViewed" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldslastViewed:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsissuetypeavatarId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsissuetypeavatarId:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsissuetypedescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsissuetypedescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsissuetypeentityId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsissuetypeentityId:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsissuetypehierarchyLevel" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsissuetypehierarchyLevel:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsissuetypeiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsissuetypeiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsissuetypeid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsissuetypeid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsissuetypename" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsissuetypename:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsissuetypeself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsissuetypeself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsissuetypesubtask" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsissuetypesubtask:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldspriorityiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldspriorityiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldspriorityid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldspriorityid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldspriorityname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldspriorityname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldspriorityself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldspriorityself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsstatusdescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsstatusdescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsstatusiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsstatusiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsstatusid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsstatusid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsstatusname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsstatusname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsstatusself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsstatusself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsstatusstatusCategorycolorName" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsstatusstatusCategorycolorName:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsstatusstatusCategoryid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsstatusstatusCategoryid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsstatusstatusCategorykey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsstatusstatusCategorykey:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsstatusstatusCategoryname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsstatusstatusCategoryname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldsstatusstatusCategoryself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldsstatusstatusCategoryself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentfieldssummary" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentfieldssummary:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentkey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentkey:Concat:" type="V_WString" />
+            <Field name="issuesfieldsparentself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsparentself:Concat:" type="V_WString" />
+            <Field name="issuesfieldspriorityiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldspriorityiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldspriorityid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldspriorityid:Concat:" type="V_WString" />
+            <Field name="issuesfieldspriorityname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldspriorityname:Concat:" type="V_WString" />
+            <Field name="issuesfieldspriorityself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldspriorityself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprogresspercent" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprogresspercent:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprogressprogress" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprogressprogress:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprogresstotal" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprogresstotal:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprojectavatarUrlsx" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprojectavatarUrlsx:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprojectid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprojectid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprojectkey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprojectkey:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprojectname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprojectname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprojectprojectCategorydescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprojectprojectCategorydescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprojectprojectCategoryid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprojectprojectCategoryid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprojectprojectCategoryname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprojectprojectCategoryname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprojectprojectCategoryself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprojectprojectCategoryself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprojectprojectTypeKey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprojectprojectTypeKey:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprojectself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprojectself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsprojectsimplified" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsprojectsimplified:Concat:" type="V_WString" />
+            <Field name="issuesfieldsreporteraccountId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsreporteraccountId:Concat:" type="V_WString" />
+            <Field name="issuesfieldsreporteraccountType" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsreporteraccountType:Concat:" type="V_WString" />
+            <Field name="issuesfieldsreporteractive" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsreporteractive:Concat:" type="V_WString" />
+            <Field name="issuesfieldsreporteravatarUrlsx" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsreporteravatarUrlsx:Concat:" type="V_WString" />
+            <Field name="issuesfieldsreporterdisplayName" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsreporterdisplayName:Concat:" type="V_WString" />
+            <Field name="issuesfieldsreporteremailAddress" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsreporteremailAddress:Concat:" type="V_WString" />
+            <Field name="issuesfieldsreporterself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsreporterself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsreportertimeZone" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsreportertimeZone:Concat:" type="V_WString" />
+            <Field name="issuesfieldsresolution" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsresolution:Concat:" type="V_WString" />
+            <Field name="issuesfieldsresolutiondate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsresolutiondate:Concat:" type="V_WString" />
+            <Field name="issuesfieldsresolutiondescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsresolutiondescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsresolutionid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsresolutionid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsresolutionname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsresolutionname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsresolutionself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsresolutionself:Concat:" type="V_WString" />
+            <Field name="issuesfieldssecurity" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssecurity:Concat:" type="V_WString" />
+            <Field name="issuesfieldsstatuscategorychangedate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsstatuscategorychangedate:Concat:" type="V_WString" />
+            <Field name="issuesfieldsstatusdescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsstatusdescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsstatusiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsstatusiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldsstatusid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsstatusid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsstatusname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsstatusname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsstatusself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsstatusself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsstatusstatusCategorycolorName" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsstatusstatusCategorycolorName:Concat:" type="V_WString" />
+            <Field name="issuesfieldsstatusstatusCategoryid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsstatusstatusCategoryid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsstatusstatusCategorykey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsstatusstatusCategorykey:Concat:" type="V_WString" />
+            <Field name="issuesfieldsstatusstatusCategoryname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsstatusstatusCategoryname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsstatusstatusCategoryself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsstatusstatusCategoryself:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsissuetypeavatarId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsissuetypeavatarId:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsissuetypedescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsissuetypedescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsissuetypeentityId" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsissuetypeentityId:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsissuetypehierarchyLevel" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsissuetypehierarchyLevel:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsissuetypeiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsissuetypeiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsissuetypeid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsissuetypeid:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsissuetypename" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsissuetypename:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsissuetypeself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsissuetypeself:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsissuetypesubtask" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsissuetypesubtask:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldspriorityiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldspriorityiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldspriorityid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldspriorityid:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldspriorityname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldspriorityname:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldspriorityself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldspriorityself:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsstatusdescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsstatusdescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsstatusiconUrl" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsstatusiconUrl:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsstatusid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsstatusid:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsstatusname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsstatusname:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsstatusself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsstatusself:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsstatusstatusCategorycolorName" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsstatusstatusCategorycolorName:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsstatusstatusCategoryid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsstatusstatusCategoryid:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsstatusstatusCategorykey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsstatusstatusCategorykey:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsstatusstatusCategoryname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsstatusstatusCategoryname:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldsstatusstatusCategoryself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldsstatusstatusCategoryself:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksfieldssummary" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksfieldssummary:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksid:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtaskskey" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtaskskey:Concat:" type="V_WString" />
+            <Field name="issuesfieldssubtasksself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssubtasksself:Concat:" type="V_WString" />
+            <Field name="issuesfieldssummary" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldssummary:Concat:" type="V_WString" />
+            <Field name="issuesfieldstimeestimate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldstimeestimate:Concat:" type="V_WString" />
+            <Field name="issuesfieldstimeoriginalestimate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldstimeoriginalestimate:Concat:" type="V_WString" />
+            <Field name="issuesfieldstimespent" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldstimespent:Concat:" type="V_WString" />
+            <Field name="issuesfieldsupdated" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsupdated:Concat:" type="V_WString" />
+            <Field name="issuesfieldsversionsarchived" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsversionsarchived:Concat:" type="V_WString" />
+            <Field name="issuesfieldsversionsdescription" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsversionsdescription:Concat:" type="V_WString" />
+            <Field name="issuesfieldsversionsid" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsversionsid:Concat:" type="V_WString" />
+            <Field name="issuesfieldsversionsname" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsversionsname:Concat:" type="V_WString" />
+            <Field name="issuesfieldsversionsreleased" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsversionsreleased:Concat:" type="V_WString" />
+            <Field name="issuesfieldsversionsreleaseDate" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsversionsreleaseDate:Concat:" type="V_WString" />
+            <Field name="issuesfieldsversionsself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsversionsself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsvoteshasVoted" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsvoteshasVoted:Concat:" type="V_WString" />
+            <Field name="issuesfieldsvotesself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsvotesself:Concat:" type="V_WString" />
+            <Field name="issuesfieldsvotesvotes" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsvotesvotes:Concat:" type="V_WString" />
+            <Field name="issuesfieldswatchesisWatching" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldswatchesisWatching:Concat:" type="V_WString" />
+            <Field name="issuesfieldswatchesself" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldswatchesself:Concat:" type="V_WString" />
+            <Field name="issuesfieldswatcheswatchCount" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldswatcheswatchCount:Concat:" type="V_WString" />
+            <Field name="issuesfieldsworkratio" size="2048" source="CrossTab:Header:JSON_Name:issuesfieldsworkratio:Concat:" type="V_WString" />
+            <Field name="issuesid" size="2048" source="CrossTab:Header:JSON_Name:issuesid:Concat:" type="V_WString" />
+            <Field name="issueskey" size="2048" source="CrossTab:Header:JSON_Name:issueskey:Concat:" type="V_WString" />
+            <Field name="issuesself" size="2048" source="CrossTab:Header:JSON_Name:issuesself:Concat:" type="V_WString" />
+            <Field name="maxResults" size="2048" source="CrossTab:Header:JSON_Name:maxResults:Concat:" type="V_WString" />
+            <Field name="startAt" size="2048" source="CrossTab:Header:JSON_Name:startAt:Concat:" type="V_WString" />
+            <Field name="total" size="2048" source="CrossTab:Header:JSON_Name:total:Concat:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1506" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>billable</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([billable]) || IsEmpty([billable]),[Row-1:billable] , [billable])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([billable]) || IsEmpty([billable]),[Row-1:billable...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1614" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>description</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([description]) || IsEmpty([description]),[Row-1:description] , [description])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([description]) || IsEmpty([description]),[Row-1:de...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1722" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>id</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([id]) || IsEmpty([id]),[Row-1:id] , [id])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([id]) || IsEmpty([id]),[Row-1:id] , [id])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1830" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>isLocked</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([isLocked]) || IsEmpty([isLocked]),[Row-1:isLocked] , [isLocked])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([isLocked]) || IsEmpty([isLocked]),[Row-1:isLocked...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1938" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>projectId</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([projectId]) || IsEmpty([projectId]),[Row-1:projectId] , [projectId])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([projectId]) || IsEmpty([projectId]),[Row-1:projec...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="2874" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>RecordID</UpdateField_Name>
+          <CreateField_Name>Consolidado</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF([Row-1:id] != [id], 1, 0)</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF([Row-1:id] != [id], 1, 0)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings>
+        <Position x="2994" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Ranges">2+</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="SelectRecords.yxmc" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="3126" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;</Operator>
+            <Field>Consolidado</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-09-15 11:08:44</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2021-09-15 11:08:44</StartDate>
+              <EndDate>2021-09-15 11:08:44</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Consolidado] &gt; 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="4182" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=status_report_db;UID=root;PWD=__EncPwd1__|||clockify_time_entry</File>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <FormatSpecificOptions>
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <AppendMap>
+              <AppendMapping mode="Custom">
+                <Field Source="clockify_id" Dest="clockify_id" />
+                <Field Source="name" Dest="name" />
+                <Field Source="workspaceId" Dest="workspaceid" />
+                <Field Source="address" Dest="address" />
+                <Field Source="archived" Dest="archived" />
+              </AppendMapping>
+            </AppendMap>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=status_report_db
+Query=clockify_time_entry</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3234" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="id" selected="True" type="V_String" size="200" />
+            <SelectField field="workspaceId" selected="True" type="V_String" size="200" />
+            <SelectField field="projectId" selected="True" type="V_String" size="200" />
+            <SelectField field="userId" selected="True" type="V_String" size="200" />
+            <SelectField field="description" selected="True" type="V_String" size="200" />
+            <SelectField field="Consolidado" selected="False" />
+            <SelectField field="_Empty_" selected="False" type="V_String" size="2048" />
+            <SelectField field="tagIds" selected="True" type="V_String" size="200" />
+            <SelectField field="taskId" selected="True" type="V_String" size="200" />
+            <SelectField field="timeIntervalduration" selected="True" type="V_String" size="200" />
+            <SelectField field="timeIntervalstart" selected="True" rename="timeIntervalstart_input" type="V_String" size="2048" />
+            <SelectField field="timeIntervalend" selected="True" rename="timeIntervalend_input" type="V_String" size="2048" />
+            <SelectField field="isLocked" selected="True" type="Bool" size="1" />
+            <SelectField field="billable" selected="True" type="Bool" size="1" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=status_report_db;UID=root;PWD=__EncPwd1__|||select distinct project.projectKey 
+from project</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <ReadCentroids>False</ReadCentroids>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=status_report_db
+Query=select distinct project.proj...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="projectKey" size="50" source="File: odbc:DSN=status_report_db;UID=root;PWD=__EncPwd1__|||select distinct project.projectKey &#xA;from project" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="162" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Allow</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_url" selected="True" input="Target_" size="200" />
+                <SelectField field="Target_content-type" selected="True" input="Target_" />
+                <SelectField field="Target_Authorization" selected="True" input="Target_" />
+                <SelectField field="Target_output path" selected="True" input="Target_" />
+                <SelectField field="Source_projectKey" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="282" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([url], &quot;{projectKey}&quot;, [projectKey])" field="url" size="200" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[url = Replace([url], "{projectKey}", [projectKey])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="426" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="output path" selected="False" />
+            <SelectField field="X-Api-Key" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="2046" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>tagIds</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([tagIds]) || IsEmpty([tagIds]),[Row-1:tagIds] , [tagIds])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([tagIds]) || IsEmpty([tagIds]),[Row-1:tagIds] , [t...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="57">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="2154" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>taskId</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([taskId]) || IsEmpty([taskId]),[Row-1:taskId] , [taskId])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([taskId]) || IsEmpty([taskId]),[Row-1:taskId] , [t...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="58">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="2262" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>timeIntervalduration</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([timeIntervalduration]) || IsEmpty([timeIntervalduration]),[Row-1:timeIntervalduration] , [timeIntervalduration])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([timeIntervalduration]) || IsEmpty([timeIntervaldu...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="2370" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>timeIntervalend</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([timeIntervalend]) || IsEmpty([timeIntervalend]),[Row-1:timeIntervalend] , [timeIntervalend])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([timeIntervalend]) || IsEmpty([timeIntervalend]),[...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="2478" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>timeIntervalstart</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([timeIntervalstart]) || IsEmpty([timeIntervalstart]),[Row-1:timeIntervalstart] , [timeIntervalstart])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([timeIntervalstart]) || IsEmpty([timeIntervalstart...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="2586" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>userId</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([userId]) || IsEmpty([userId]),[Row-1:userId] , [userId])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([userId]) || IsEmpty([userId]),[Row-1:userId] , [u...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="2694" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>workspaceId</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Nearest</OtherRows>
+          <NumRows value="1" />
+          <Expression>IIF(IsNull([workspaceId]) || IsEmpty([workspaceId]),[Row-1:workspaceId] , [workspaceId])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IIF(IsNull([workspaceId]) || IsEmpty([workspaceId]),[Row-1:wo...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="3330" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Trim(Replace(Replace([timeIntervalstart_input], &quot;T&quot;, &quot; &quot;), &quot;Z&quot;, &quot; &quot;))" field="timeIntervalstart_input" size="2048" type="V_String" />
+            <FormulaField expression="Trim(Replace(Replace([timeIntervalend_input], &quot;T&quot;, &quot; &quot;), &quot;Z&quot;, &quot; &quot;))" field="timeIntervalend_input" size="2048" type="V_String" />
+            <FormulaField expression="[description]" field="description_trated" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>timeIntervalstart_input = Trim(Replace(Replace([timeIntervalstart_input], "T", "...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="3534" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>timeIntervalstart_input</InputFieldName>
+          <Language>English</Language>
+          <Format>yyyy-MM-dd hh:mm:ss</Format>
+          <OutputFieldName>timeIntervalstart</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert timeIntervalstart_input From:
+yyyy-MM-dd hh:mm:ss</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="3642" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>timeIntervalend_input</InputFieldName>
+          <Language>English</Language>
+          <Format>yyyy-MM-dd hh:mm:ss</Format>
+          <OutputFieldName>timeIntervalend</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert timeIntervalend_input From:
+yyyy-MM-dd hh:mm:ss</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="66">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3978" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="id" selected="True" />
+            <SelectField field="workspaceId" selected="True" />
+            <SelectField field="projectId" selected="True" />
+            <SelectField field="userId" selected="True" />
+            <SelectField field="description" selected="True" />
+            <SelectField field="tagIds" selected="True" />
+            <SelectField field="taskId" selected="True" />
+            <SelectField field="timeIntervalduration" selected="True" />
+            <SelectField field="timeIntervalstart_input" selected="False" />
+            <SelectField field="timeIntervalend_input" selected="False" />
+            <SelectField field="isLocked" selected="True" />
+            <SelectField field="billable" selected="True" />
+            <SelectField field="timeIntervalstart" selected="True" />
+            <SelectField field="timeIntervalend" selected="True" />
+            <SelectField field="timeIntervalEntry_seconds" selected="True" />
+            <SelectField field="timeIntervalEntry_minutes" selected="True" />
+            <SelectField field="timeIntervalEntry_hours" selected="True" />
+            <SelectField field="timeEntry_date_refer" selected="True" />
+            <SelectField field="timeEntry_year_refer" selected="True" />
+            <SelectField field="timeEntry_month_refer" selected="True" />
+            <SelectField field="timeEntry_day_refer" selected="True" />
+            <SelectField field="description_trated" selected="True" />
+            <SelectField field="is_description_default" selected="True" />
+            <SelectField field="teste" selected="False" />
+            <SelectField field="testeCointainsNumber" selected="False" />
+            <SelectField field="codigo_projeto_time_entry" selected="True" />
+            <SelectField field="codigo_tarefa_time_entry" selected="True" type="Int64" size="8" />
+            <SelectField field="x" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="3762" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeDiff([timeIntervalend],[timeIntervalstart],'seconds')" field="timeIntervalEntry_seconds" size="8" type="Int64" />
+            <FormulaField expression="[timeIntervalEntry_seconds]/60" field="timeIntervalEntry_minutes" size="4" type="Float" />
+            <FormulaField expression="[timeIntervalEntry_minutes]/60" field="timeIntervalEntry_hours" size="4" type="Float" />
+            <FormulaField expression="Left([timeIntervalstart], 10)" field="timeEntry_date_refer" size="10" type="Date" />
+            <FormulaField expression="DateTimeYear([timeIntervalstart])" field="timeEntry_year_refer" size="8" type="Int64" />
+            <FormulaField expression="DateTimeMonth([timeIntervalstart_input])" field="timeEntry_month_refer" size="2" type="Int16" />
+            <FormulaField expression="DateTimeDay([timeIntervalstart])" field="timeEntry_day_refer" size="2" type="Int16" />
+            <FormulaField expression="REGEX_Match([description_trated],  &quot;.*\d+.*&quot;)" field="testeCointainsNumber" size="1" type="Bool" />
+            <FormulaField expression="IIF(Left([description_trated],1) == &quot;[&quot; &amp;&amp; FindString([description_trated], &quot;]&quot;) &gt; 0 &amp;&amp; FindString([description_trated], &quot;-&quot;) &gt; 0 &amp;&amp;&#xA;FindString([description_trated], &quot;:&quot;) &gt; 0 &amp;&amp;&#xA;[testeCointainsNumber], 1, 0)" field="is_description_default" size="1" type="Bool" />
+            <FormulaField expression="IIF(is_description_default, Trim(Replace(Left([description_trated], FindString([description_trated], &quot;-&quot;)),&quot;[&quot;,&quot;&quot;)), Null())" field="codigo_projeto_time_entry" size="64" type="String" />
+            <FormulaField expression="IIF(is_description_default,&#xA;Trim(&#xA;Right(&#xA;Left([description_trated], FindString([description_trated], &quot;]&quot;))&#xA;,&#xA;ToNumber(&#xA;Length(Left([description_trated], FindString([description_trated], &quot;]&quot;))) -&#xA;FindString([description_trated], &quot;-&quot;) -1)&#xA;))&#xA;, Null())" field="codigo_tarefa_time_entry" size="64" type="String" />
+            <FormulaField expression="FindString([description_trated], &quot;-&quot;)" field="x" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>timeIntervalEntry_seconds = DateTimeDiff([timeIntervalend],[timeIntervalstart],'...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings>
+        <Position x="3438" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"description_trated"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">False</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">True</Value>
+          <Value name="Check Box (122)">True</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">True</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings>
+        <Position x="3870" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"codigo_tarefa_time_entry"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">True</Value>
+          <Value name="Check Box (122)">True</Value>
+          <Value name="Check Box (53)">True</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">True</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="4086" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="projectId" order="Ascending" />
+            <Field field="timeIntervalstart" order="Ascending" />
+            <Field field="userId" order="Ascending" />
+            <Field field="codigo_tarefa_time_entry" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>projectId - Ascending
+timeIntervalstart - Ascending
+userId - Ascending
+codigo_tarefa_time_entry - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="72">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1566" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsEmpty</Operator>
+            <Field>errorMessages</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-09-21 02:51:35</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-09-21 02:51:35</StartDate>
+              <EndDate>2021-09-21 02:51:35</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IsEmpty([errorMessages])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1662" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="53" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="53" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output26" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="72" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Output" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="True" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="57" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="58" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="68" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="70" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output26" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Output26" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="True" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="True" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>jira-issues</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="06f8e857-5346-4e0a-9a90-355f1c7aee57" />
+      <Telemetry>
+        <PreviousWorkflowId value="e315af99-b872-4c58-b6dd-df04a1d209c9" />
+        <OriginWorkflowId value="73cda955-e40f-4bb7-a6e2-a64dc84ddfa3" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

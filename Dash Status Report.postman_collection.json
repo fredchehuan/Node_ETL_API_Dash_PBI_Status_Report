@@ -1,0 +1,522 @@
+{
+	"info": {
+		"_postman_id": "a5c4005e-107d-4ac1-b943-a107cb28935e",
+		"name": "Dash Status Report",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Jira Get Projects",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cmljYXJkby5zZXB1bHZlZGFAbWp2LmNvbS5icjphSUFUSm11THlJMUg0UWVGWGNpOTQwMzQ",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://mjv-corp.atlassian.net/rest/api/3/project/search",
+					"protocol": "https",
+					"host": [
+						"mjv-corp",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"project",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Jira Get Sprint",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cmljYXJkby5zZXB1bHZlZGFAbWp2LmNvbS5icjphSUFUSm11THlJMUg0UWVGWGNpOTQwMzQ",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://mjv-corp.atlassian.net/rest/api/3/project/search",
+					"protocol": "https",
+					"host": [
+						"mjv-corp",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"project",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Jira Get Issues by ProjectKey (Dash EL)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cmljYXJkby5zZXB1bHZlZGFAbWp2LmNvbS5icjphSUFUSm11THlJMUg0UWVGWGNpOTQwMzQ",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://mjv-corp.atlassian.net/rest/api/3/search?jql=project%20%3D%20EL&startAt=0",
+					"protocol": "https",
+					"host": [
+						"mjv-corp",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%20%3D%20EL"
+						},
+						{
+							"key": "startAt",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Jira Get Worklog by Issue",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cmljYXJkby5zZXB1bHZlZGFAbWp2LmNvbS5icjphSUFUSm11THlJMUg0UWVGWGNpOTQwMzQ",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://mjv-corp.atlassian.net/rest/api/3/issue/EL-4/worklog",
+					"protocol": "https",
+					"host": [
+						"mjv-corp",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"issue",
+						"EL-4",
+						"worklog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clockfy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Api-Key",
+						"value": "YTVlNDM3NWUtNjhkNy00N2UyLWE0YTUtNTU0Y2RkZWU0OTA2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.clockify.me/api/v1/user",
+					"protocol": "https",
+					"host": [
+						"api",
+						"clockify",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clockfy Workspace Clients",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Api-Key",
+						"value": "YTVlNDM3NWUtNjhkNy00N2UyLWE0YTUtNTU0Y2RkZWU0OTA2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.clockify.me/api/v1/workspaces/60a6c734b7cf50345092ad5b/clients",
+					"protocol": "https",
+					"host": [
+						"api",
+						"clockify",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"workspaces",
+						"60a6c734b7cf50345092ad5b",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clockfy get all projects on workspace",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Api-Key",
+						"value": "YTVlNDM3NWUtNjhkNy00N2UyLWE0YTUtNTU0Y2RkZWU0OTA2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.clockify.me/api/v1/workspaces/60a6c734b7cf50345092ad5b/projects",
+					"protocol": "https",
+					"host": [
+						"api",
+						"clockify",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"workspaces",
+						"60a6c734b7cf50345092ad5b",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clockfy Find project by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Api-Key",
+						"value": "YTVlNDM3NWUtNjhkNy00N2UyLWE0YTUtNTU0Y2RkZWU0OTA2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.clockify.me/api/v1/workspaces/60a6c734b7cf50345092ad5b/users",
+					"protocol": "https",
+					"host": [
+						"api",
+						"clockify",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"workspaces",
+						"60a6c734b7cf50345092ad5b",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clockfy Find tags on workspace",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Api-Key",
+						"value": "YTVlNDM3NWUtNjhkNy00N2UyLWE0YTUtNTU0Y2RkZWU0OTA2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.clockify.me/api/v1/workspaces/60a6c734b7cf50345092ad5b/tags",
+					"protocol": "https",
+					"host": [
+						"api",
+						"clockify",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"workspaces",
+						"60a6c734b7cf50345092ad5b",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clockfy Find tasks on project",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Api-Key",
+						"value": "YTVlNDM3NWUtNjhkNy00N2UyLWE0YTUtNTU0Y2RkZWU0OTA2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.clockify.me/api/v1/workspaces/60a6c734b7cf50345092ad5b/tags",
+					"protocol": "https",
+					"host": [
+						"api",
+						"clockify",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"workspaces",
+						"60a6c734b7cf50345092ad5b",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clockfy Find all users on workspace",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Api-Key",
+						"value": "YTVlNDM3NWUtNjhkNy00N2UyLWE0YTUtNTU0Y2RkZWU0OTA2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.clockify.me/api/v1/workspaces/60a6c734b7cf50345092ad5b/projects/60edaa3c0fdfe402db833729",
+					"protocol": "https",
+					"host": [
+						"api",
+						"clockify",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"workspaces",
+						"60a6c734b7cf50345092ad5b",
+						"projects",
+						"60edaa3c0fdfe402db833729"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clockfy Get your time entries on workspace",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Api-Key",
+						"value": "YTVlNDM3NWUtNjhkNy00N2UyLWE0YTUtNTU0Y2RkZWU0OTA2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.clockify.me/api/v1/workspaces/60a6c734b7cf50345092ad5b/user/60df8f875f596c5a7d0fd235/time-entries",
+					"protocol": "https",
+					"host": [
+						"api",
+						"clockify",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"workspaces",
+						"60a6c734b7cf50345092ad5b",
+						"user",
+						"60df8f875f596c5a7d0fd235",
+						"time-entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clockfy Weekly report",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Api-Key",
+						"value": "YTVlNDM3NWUtNjhkNy00N2UyLWE0YTUtNTU0Y2RkZWU0OTA2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dateRangeStart\": \"2021-07-28T00:00:00.000\",\r\n  \"dateRangeEnd\": \"2021-08-04T00:00:00.000\",\r\n  \"weeklyFilter\": {\r\n    \"group\": \"USER\",\r\n    \"subgroup\": \"TIME\"\r\n  },\r\n  \"sortOrder\": \"DESCENDING\",\r\n  \"exportType\": \"JSON\",\r\n  \"rounding\": false,\r\n  \"amountShown\": \"EARNED\",\r\n  \"timeZone\": \"America/Los_Angeles\",\r\n  \"users\": {},\r\n  \"userGroups\": null,\r\n  \"invoicingState\": \"ALL\",\r\n  \"approvalState\": \"ALL\",\r\n  \"clients\": null,\r\n  \"projects\": null,\r\n  \"tasks\": null,\r\n  \"tags\": {},\r\n  \"billable\": true,\r\n  \"description\": \"\",\r\n  \"withoutDescription\": true,\r\n  \"customFields\": []\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://reports.api.clockify.me/v1/workspaces/60a6c734b7cf50345092ad5b/reports/weekly",
+					"protocol": "https",
+					"host": [
+						"reports",
+						"api",
+						"clockify",
+						"me"
+					],
+					"path": [
+						"v1",
+						"workspaces",
+						"60a6c734b7cf50345092ad5b",
+						"reports",
+						"weekly"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clockfy Get all my shared reports",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Api-Key",
+						"value": "YTVlNDM3NWUtNjhkNy00N2UyLWE0YTUtNTU0Y2RkZWU0OTA2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dateRangeStart\": \"2021-07-28T00:00:00.000\",\r\n  \"dateRangeEnd\": \"2021-08-04T00:00:00.000\",\r\n  \"weeklyFilter\": {\r\n    \"group\": \"USER\",\r\n    \"subgroup\": \"TIME\"\r\n  },\r\n  \"sortOrder\": \"DESCENDING\",\r\n  \"exportType\": \"JSON\",\r\n  \"rounding\": false,\r\n  \"amountShown\": \"EARNED\",\r\n  \"timeZone\": \"America/Los_Angeles\",\r\n  \"users\": {},\r\n  \"userGroups\": null,\r\n  \"invoicingState\": \"ALL\",\r\n  \"approvalState\": \"ALL\",\r\n  \"clients\": null,\r\n  \"projects\": null,\r\n  \"tasks\": null,\r\n  \"tags\": {},\r\n  \"billable\": true,\r\n  \"description\": \"\",\r\n  \"withoutDescription\": true,\r\n  \"customFields\": []\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://reports.api.clockify.me/v1/workspaces/60a6c734b7cf50345092ad5b/shared-reports",
+					"protocol": "https",
+					"host": [
+						"reports",
+						"api",
+						"clockify",
+						"me"
+					],
+					"path": [
+						"v1",
+						"workspaces",
+						"60a6c734b7cf50345092ad5b",
+						"shared-reports"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,9 @@
+JIRA
+// Pkr1BjDKnKesL6QsezXf
+// Pkr1BjDKnKesL6QsezXf
+
+CLOCKIFY
+// ZjZiZTEwMWUtZmM4MS00M2Y3LTg0OTItZDdjNzljMTc2Yzk4 - Ricardo
+// Y2QzODNlZTctYjY1My00ODFkLWFlMGEtOGI1MmYzODljYjJi - Laboratorio
+
+docker run --init -d   --name homeassistant   --privileged   --restart=unless-stopped   -v /etc/localtime:/etc/localtime:ro   -v /PATH_TO_YOUR_CONFIG:/config   --network=host   ghcr.io/home-assistant/home-assistant:stable

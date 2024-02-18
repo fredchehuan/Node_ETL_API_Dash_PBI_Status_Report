@@ -1,0 +1,41 @@
+ID,Work Item Type,Title 1,Title 2,State,Closed By,Changed By,Value Area,Iteration Path,Original Estimate,Remaining Work,Completed Work
+7612,User Story,API para integração da fila de trabalho dos Robôs,,Active,,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Business,Credicitrus DevOps\2021\02-01,,,
+8203,Task,,Onboarding do projeto,Closed,Diogo Miranda <diogo.miranda@mjv.com.br>,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,,Credicitrus DevOps\2021\02-01,35,,35
+8191,Task,,Criar estrutura do projeto,Closed,Diogo Miranda <diogo.miranda@mjv.com.br>,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,,Credicitrus DevOps\2021\02-01,8,,16
+8190,Task,,Criar serviço de autenticação com o Orquestrador,Closed,Diogo Miranda <diogo.miranda@mjv.com.br>,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,,Credicitrus DevOps\2021\02-01,4,,4
+8196,Task,,Criar serviço para obter lista de robôs,Closed,Diogo Miranda <diogo.miranda@mjv.com.br>,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,,Credicitrus DevOps\2021\02-01,2,,2
+8197,Task,,Criar serviço para parar job específico,Closed,Diogo Miranda <diogo.miranda@mjv.com.br>,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,,Credicitrus DevOps\2021\02-01,2,,2
+8199,Task,,Criar serviço para obter o status dos itens de uma fila ( get qeue items ),Closed,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,,Credicitrus DevOps\2021\02-01,2,,2
+8198,Task,,Criar serviço para enviar um ou mais itens para a fila,Active,,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,,Credicitrus DevOps\2021\02-01,4,0,8
+8977,User Story,Follow Up  e Ajustes de Arquitetura e Ambiente,,Resolved,,Marcelo Augusto Prado <mprado@credicitrus.com.br>,Business,Credicitrus DevOps\2021\03-29,,,
+8956,Task,,Configuração de ambiente - Ajustes credenciais,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,2,,2
+8957,Task,,Configuração de ambiente - robo local,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,8,,8
+8973,Task,,Teste Adicionar Item Fila,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,4,,4
+8948,Task,,Testar Listar Robos,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,4,,4
+8960,Task,,Testar Listar Jobs,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,1,,1
+8947,Task,,Testar Obter Credenciais,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,2,,2
+8963,Task,,Ajustar Configurações de acordo com a arquitetura padrão,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,4,,4
+8995,Task,,"Configuração de ambiente - ajustes nugets, reuniao diogo e refac de ",Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-29,16,,16
+9302,Task,,Reunião de Alinhamento Ambiente HMG,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-29,4,,4
+9303,Task,,Reunião de Alinhamento CD/CI e itens de arquitetura,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-29,2,,2
+8894,User Story,ROTINA – SABER SE HÁ ALGUM ROBÔ LIVRE,,Resolved,,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,Business,Credicitrus DevOps\2021\03-15,,,
+8958,Task,,Listar Maquinas,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,2,,2
+8895,User Story,INTERROMPER O JOB E ATUALIZAR O STATUS DOS ITENS AFETADOS,,Active,,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,Business,Credicitrus DevOps\2021\03-15,,,
+8961,Task,,Atualizar Status Item,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,4,,4
+8964,Task,,Obter Rotinas Priorizadas na Hora Atual,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,2,,2
+8965,Task,,Listar Rotinas para Reinserção na fila,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,8,,8
+8976,Task,,Calculo Peso por Job,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,8,,8
+8966,Task,,Matar Item da Fila e Atualizar Item,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,4,,4
+8897,User Story,OBTER O STATUS ATUAL DE UM ITEM,,Active,,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,Business,Credicitrus DevOps\2021\03-15,,,
+8959,Task,,Mapear novas colunas,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,2,,2
+8962,Task,,Obter Status Item por Rotina,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,2,,4
+8893,User Story,ROTINA – OBTER AS CREDENCIAIS ,,New,,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,Business,Credicitrus DevOps\2021\03-15,,,
+8996,Task,,Preparar arquivo configuração PRD,New,,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,1,1,
+9301,Task,,Obter Credenciais - On Premisse,Active,,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,4,4,
+8896,User Story,ROTINA-ADICIONAR UM NOVO ITEM DE FILA AO ORCHESTRATOR,,New,,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,Business,Credicitrus DevOps\2021\03-15,,,
+8997,Task,,Adicionar items na fila em lote,Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,4,,4
+8898,User Story,VERIFICAR O TEMPO MÉDIO POR ITEM DE UMA FILA ASSOCIADO A UM PROCESSO,,New,,Otavio de Carvalho <ocarvalho@credicitrus.com.br>,Business,Credicitrus DevOps\2021\03-15,,,
+9304,Task,,Log Inicio e Fim de Execução,New,,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,4,4,
+9394,Task,,"Configurar Rollbar, Swagger e Heathchecker",Closed,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,Vanessa Ferreira <vanessa.ferreira@mjv.com.br>,,Credicitrus DevOps\2021\03-15,1,,1
+,,,,,,,,,,,
+,,,,,,,,,150,,155

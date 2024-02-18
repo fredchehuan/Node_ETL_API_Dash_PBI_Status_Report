@@ -1,0 +1,23 @@
+	# Soma das horas previstas de todas as atividades presentes no Jira considerando as estimativas iniciais
+	# Soma das horas previstas de todas as atividades presentes no Jira considerando as estimativas revisitadas (atividades com horas replanejadas)
+	# Quantidade de horas previstas em atividades que já foram fechadas até o momento
+	# Quantidade de horas consumidas nas atividades que já foram fechadas até o momento
+  	# Quantidade de horas consumidas nas atividades em geral (todos os status)
+	# Quantidade de horas planejadas originalmente para as atividades ja iniciadas (finalizadas ou nao)
+	# Quantidade de horas previstas em contrato
+	# Quantidade de atividades sem descricao no Jira
+	# Quantidade de atividades sem horas estimadas no Jira
+	# Quantidade de atividades com sobrecarga de trabalho no Jira, considerando as estimativas originais (foram gastas mais horas do que planejado originalmente)
+	# Quantidade de atividades finalizadas
+	# Quantidade de atividades totais (todos os status)
+    # Relação entre a quantidade de horas reestimadas e as horas estimadas originalmente
+    # Percentual de valor agregado em relação ao todo - Horas estimadas originalmente para as atividades já fechadas dividido pelas horas em contrato)
+	# Percentual de atividades sem descricao
+	# Percentual de atividades sem estimativa de tempo
+	# Quantidade de tempo de overload ate o momento (quantidade de mais horas gastas alem do planejado em atividades fechadas)
+    # Quantidade de horas consumidas em atividades ja iniciadas (finalizadas ou nao) menos a quantidade de horas planejadas para essas atividades
+    # Quantidade de atividades que foram subestimadas
+    # Percentual de atividades fechadas em relacao as atividades existentes no Jira
+    # Percentual de horas vendidas em contrato em relação às horas de atividades que estão previstas em atividades no Jira
+
+
